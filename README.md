@@ -21,3 +21,8 @@ Write down your most important tasks, meetings, or appointments to help uou keep
  ## License
 
  Please refer repo
+
+ ## Link
+
+ https://a-monroy99.github.io/my-planner/
+ 
