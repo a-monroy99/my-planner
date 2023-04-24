@@ -11,5 +11,13 @@ N/A
 ## Usage
 
 Write down your most important tasks, meetings, or appointments to help uou keep track of your super busy schedule
+ 
+![planner scheduler with current date and 9am - 5pm time](assets/screenshot.png)
 
-![alt text](assets/images/screenshot.png)
+## Credits
+
+ N/A
+
+ ## License
+
+ Please refer repo
