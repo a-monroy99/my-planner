@@ -1,11 +1,15 @@
 var eventsData;
 var timeDisplayEl = $("#currentDay")
 
+// This will help display the current date and time
 function displayTime() {
     var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
     timeDisplayEl.text(rightNow);
 }
 
+// This for loop helps display the proper background color on the text area to see what hour
+// it currently is gy displaying red, the hours that have past by displaying grey and the future
+// by displaying green
 function setHourColors() {
     var now = dayjs();
     for (var i = 9; i < 18; i++) {
@@ -20,6 +24,8 @@ function setHourColors() {
     }
 }
 
+// this helps access the striing inside the property eventsData. If there is no saved text inside local
+// stotrage then it will retturn an emtpy string
 function loadStoredData() {
     eventsData = JSON.parse(localStorage.getItem("calenderEvents"));
     console.log(eventsData)
@@ -36,6 +42,9 @@ function loadStoredData() {
             hour17: "",
         }
     }
+    // Retun the values of object eventsData into and array 
+    // which allows us to access the values in a for loop and display the text in its corresponding
+    // textarea
     var schedulerEl = $("#scheduler");
     var hourDataArr = Object.values(eventsData);
     console.log(hourDataArr + " this works");
@@ -57,12 +66,14 @@ function handleSaveClick(event) {
     localStorage.setItem("calenderEvents", JSON.stringify(eventsData))
 }
 
-
+// added an event listener to each button
 $(".saveBtn").on("click", handleSaveClick);
 
+// When the page loads it will run these functions
 $(function() {
     loadStoredData();
     setHourColors();
 });
 
+// properly displays the time
 setInterval(displayTime, 1000);
